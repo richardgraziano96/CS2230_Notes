@@ -1,0 +1,85 @@
+Hex | Unsin | Sin
+_________________
+AA  |  170  | -86
+49  |  73   |  73
+F3  |  243  | -13
+N:1 Z:0 V:0 C:0
+----------------------------------------------------------------------------------------------------------------------------------------
+Base 10 --> Base 4 (23)
+4|23 4|5 4|1
+  20   4
+  r3  r1
+Since 4 cannot go into 1 we are done. Reverse order and put together. 311 turns to 113
+----------------------------------------------------------------------------------------------------------------------------------------
+Base 5 --> Base 10 (23)
+(2*5^1)+(3*5^0)
+10+3 = 13
+You multiply the main numbers by the base number to the power of the placement. Remember we always start at 0.
+----------------------------------------------------------------------------------------------------------------------------------------
+r0: Program counter: Will always point to the next executable instruction
+r1: Stack Pointer:   Used to store the return address of subroutine calls and interrupts. Storage for local data (push and pop)
+r2: Status Register: Keeps the CVNZ as well as some control bits content
+r3: Constant Generator: Essentially makes you able to write shorter instructions for it to run
+----------------------------------------------------------------------------------------------------------------------------------------
+How many registers are in the MSP430? 16 registers
+----------------------------------------------------------------------------------------------------------------------------------------
+Pre Process:  Lines starting with a number are interrupted by the preprocessor commands.
+Compiler:     Translates to assembly language.
+Assembler:    Translates to object code.
+Linker:       Arrange the pieces so functions can call other functions.
+----------------------------------------------------------------------------------------------------------------------------------------
+Arithmetic Logic Unit:  Carries out the arithmetic and logical operations.
+Control Unit:           Handles all processor control signals (input and output).
+Registers:              Small data holding areas. Holds things like a bit or a character.
+----------------------------------------------------------------------------------------------------------------------------------------
+Xor:        Or:         And:        ~ (Not)     << (Shift Left)   >> (Shift Right)
+1010 = 10   1010  = 10  1010 = 10   0010 = 2    00010100 = 20     00010100 = 20
+0110 = 6    0110  = 6   0110 = 6    1101 = 13   00101000 = 40     00001010 = 10
+____        ____        ____
+1100 = 12   1110  = 14  0010 = 2
+----------------------------------------------------------------------------------------------------------------------------------------
+Fetch:   Tracks which instruction the CPU takes next
+Decode:  Assembly decoded into binary
+Execute: Do calculations with ALU, move memory or jump to another address
+Store:   Gives feedback
+----------------------------------------------------------------------------------------------------------------------------------------
+Ram Limit and Size
+512 Bytes in size | Range 0x200 to 0x400
+----------------------------------------------------------------------------------------------------------------------------------------
+Program ROM
+Starts at 0xC000
+----------------------------------------------------------------------------------------------------------------------------------------
+Timers
+TA0CTL:   Controls Timer 0
+TA0R:     Current value is Stored
+TA0CCR0:  Stores a 16-Bit value
+TA0CCTL0: Controls TA0CCR0
+----------------------------------------------------------------------------------------------------------------------------------------
+Linux Commands
+ls -la
+mv (source) (destination) [BE CAREFUL THIS DELETES ANYTHING IN THE DESTINATION WITH THE SAME NAME] {deletes source}
+cp (source) (destination)
+ls (source)
+----------------------------------------------------------------------------------------------------------------------------------------
+TA0CTL   = TASSEL_2 | ID_2 | MC_1; Given interrupt 50 times every second
+TA0CCTL0 = CCIE;
+TA0CCR0  = 5000 (1000000/4/50)
+----------------------------------------------------------------------------------------------------------------------------------------
+P1DIR = 0F0; (which are inputs?)
+F0 = 11110000 (This means that P1.0, P1.1, P1.2 and P1.3 are INPUTS)
+----------------------------------------------------------------------------------------------------------------------------------------
+P1REN = BIT3;
+{P1OUT = BIT3} (This will choose a pull-up resistor)
+----------------------------------------------------------------------------------------------------------------------------------------
+P1OUT = 108; (Which pins are ON?)
+01101100 = P1.2, P1.3, P1.5, P1.6 are all on (We count the 1's as OUTPUT and 0's as INPUT)
+----------------------------------------------------------------------------------------------------------------------------------------
+Return 0 if Even or 1 if Odd?
+int parity(int v) {
+    int total = 0; 
+    while(v != 0) {
+        total += v & 1;
+        v = v >> 1;
+    }  
+    return total % 2;
+}
