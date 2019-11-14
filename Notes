@@ -5,6 +5,10 @@ AA  |  170  | -86
 F3  |  243  | -13
 N:1 Z:0 V:0 C:0
 ----------------------------------------------------------------------------------------------------------------------------------------
+Hexadecimal: 0xFF
+Binary:      1111 1111
+Decimal:     255 
+----------------------------------------------------------------------------------------------------------------------------------------
 Base 10 --> Base 4 (23)
 4|23 4|5 4|1
   20   4
@@ -21,7 +25,8 @@ r1: Stack Pointer:   Used to store the return address of subroutine calls and in
 r2: Status Register: Keeps the CVNZ as well as some control bits content
 r3: Constant Generator: Essentially makes you able to write shorter instructions for it to run
 ----------------------------------------------------------------------------------------------------------------------------------------
-How many registers are in the MSP430? 16 registers
+How many registers are in the MSP430? 
+16 registers
 ----------------------------------------------------------------------------------------------------------------------------------------
 Pre Process:  Lines starting with a number are interrupted by the preprocessor commands.
 Compiler:     Translates to assembly language.
@@ -60,6 +65,13 @@ ls -la
 mv (source) (destination) [BE CAREFUL THIS DELETES ANYTHING IN THE DESTINATION WITH THE SAME NAME] {deletes source}
 cp (source) (destination)
 ls (source)
+man (command you want to learn more about)
+history [This shows you all the previous information you've put into the terminal]
+----------------------------------------------------------------------------------------------------------------------------------------
+Git:
+git add -A [Best choice {Fastest}]
+git commit -m "(Message Here)" [Sets a message to more easily find current version]
+git push [Sends to the grader]
 ----------------------------------------------------------------------------------------------------------------------------------------
 TA0CTL   = TASSEL_2 | ID_2 | MC_1; Given interrupt 50 times every second
 TA0CCTL0 = CCIE;
