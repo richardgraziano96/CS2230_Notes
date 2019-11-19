@@ -95,3 +95,12 @@ int parity(int v) {
     }  
     return total % 2;
 }
+----------------------------------------------------------------------------------------------------------------------------------------
+Debugging:
+make debug
+b (line)            [sets a break point at given line
+c                   [continues the code]
+p HEAD              [prints head node]
+p *HEAD             [prints head node with dereferenced items of struct]
+p (variable)        [will print a variable's memory address]
+step (given number) [steps given number of lines]
