@@ -103,6 +103,7 @@ int parity(int v) {
 ----------------------------------------------------------------------------------------------------------------------------------------
 Debugging:
 make debug
+run (arg1) (arg2)   [runs the program] {optional} [starts with args 1 and 2]
 b (line)            [sets a break point at given line
 c                   [continues the code]
 info
