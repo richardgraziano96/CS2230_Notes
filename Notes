@@ -106,6 +106,7 @@ make debug
 b (line)            [sets a break point at given line
 c                   [continues the code]
 info
+delete 1            [deletes breakpoint 1]
 p HEAD              [prints head node]
 p *HEAD             [prints head node with dereferenced items of struct]
 p (variable)        [will print a variable's memory address]
