@@ -113,3 +113,14 @@ p *HEAD             [prints head node with dereferenced items of struct]
 p (variable)        [will print a variable's memory address]
 step (given number) [steps given number of lines]
 bt                  [backtrace]
+----------------------------------------------------------------------------------------------------------------------------------------
+What are the three steps to properly configure an interrupt on the MSP430?
+1. Configure hardware to cause an Interrupt
+2. Write ISR
+3. Put ISR address into IVT
+----------------------------------------------------------------------------------------------------------------------------------------
+How many bits are in a byte? 
+8
+----------------------------------------------------------------------------------------------------------------------------------------
+How many Bytes are in a 'Word'?
+2
